@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Generos</h1>
+<table>
+  <tr>
+    <th>
+      <b>Id</b>
+    </th>
+    <th>
+      <b>Tipo</b>
+    </th>
+  </tr>
+  {% for g in generos %}
+  <tr>
+    <td>
+      <a href="/generos/{{ g.idGenero }}">{{ g.idGenero }}</a>
+    </td>
+    <td>
+      {{ g.tipo }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Personagens</h1>
+<table>
+  <tr>
+    <th>
+      <b>Id</b>
+    </th>
+    <th>
+      <b>Nome</b>
+    </th>
+  </tr>
+  {% for p in personagens %}
+  <tr>
+    <td>
+      <a href="/personagens/{{ p.idPersonagem }}">{{ p.idPersonagem }}</a>
+    </td>
+    <td>
+      {{ p.nomeP }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

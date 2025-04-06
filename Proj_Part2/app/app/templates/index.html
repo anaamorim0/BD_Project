@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Base de Dados: Series</h1>
+
+<h2>Descrição</h2>
+<p>O universo que consideramos engloba o mundo das séries presentes na fonte de dados do <a href="https://datasets.imdbws.com">IMDB</a>, do <a href="https://www.themoviedb.org">TMDB</a> e do <a href="https://www.kaggle.com">Kaggle</a>.
+  Filtramos a informação aqui recolhida para criar uma base de dados mais concisa que representa todas as séries que saíram no ano de 2021 na plataforma <a href="https://www.netflix.com" >Netflix</a>.
+</p>
+
+<h2>Algumas estatísticas</h2>
+<table>
+<tr>
+  <th>Categoria</th>
+  <th>Total</th>
+</tr>
+<tr>
+  <td>Series</td>
+  <td>{{ stats.n_series }}</td>
+</tr>
+<tr>
+  <td>Atores</td>
+  <td>{{ stats.n_atores }}</td>
+</tr>
+<tr>
+  <td>Géneros</td>
+  <td>{{ stats.n_generos }}</td>
+</tr>
+<tr>
+  <td>Personagens</td>
+  <td>{{ stats.n_personagens }}</td>
+</tr>
+<tr>
+  <td>Escritores</td>
+  <td>{{ stats.n_escritores }}</td>
+</tr>
+</table>
+
+
+<h2>Funcionalidades</h2>
+
+<h3>Series</h3>
+<p>
+   <a href="/series">List all</a>
+</p>
+<p>Obter informação da série:
+<form name="sid" action="javascript:window.open('/series/'+document.forms['sid'].elements['id'].value,'_self')">
+  Id Serie: <input value="1" name="id" type="number" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+
+<p>Pesquisa por titulo:
+<form name="ssearch" action="javascript:window.open('/series/search/'+document.forms['ssearch'].elements['expr'].value,'_self')">
+  <input name="expr" id="expr" value="nome" required/>
+  <input type="submit" value="search"/>
+</form>
+</p>
+
+
+<h3>Atores</h3>
+<p>
+   <a href="/atores">List all</a>
+</p>
+<p>Obter informação do ator:
+<form name="aid" action="javascript:window.open('/atores/'+document.forms['aid'].elements['id'].value,'_self')">
+ Id Ator: <input value="1" name="id" type="number" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+
+<p>Pesquisa por nome do ator:
+  <form name="asearch" action="javascript:window.open('/atores/search/'+document.forms['asearch'].elements['expr'].value,'_self')">
+    <input name="expr" id="expr" value="nome" required/>
+    <input type="submit" value="search"/>
+  </form>
+</p>
+
+
+<h3>Generos</h3>
+<p>
+   <a href="/generos">List all</a>
+</p>
+
+<p>Obter informação do género:
+<form name="gid" action="javascript:window.open('/generos/'+document.forms['gid'].elements['id'].value,'_self')">
+Id Género: <input value="1" name="id" type="number" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+
+
+
+<h3>Personagens</h3>
+<p>
+   <a href="/personagens">List all</a>
+</p>
+
+<p>Obter informação da personagem:
+<form name="pid" action="javascript:window.open('/personagens/'+document.forms['pid'].elements['id'].value,'_self')">
+Id Personagem: <input value="1" name="id" type="number" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+
+<p>Pesquisa por nome da personagem:
+  <form name="psearch" action="javascript:window.open('/personagens/search/'+document.forms['psearch'].elements['expr'].value,'_self')">
+    <input name="expr" id="expr" value="nome" required/>
+    <input type="submit" value="search"/>
+  </form>
+</p>
+
+<h3>Escritores</h3>
+<p>
+   <a href="/escritores">List all</a>
+</p>
+
+<p>Obter informação do escritor:
+<form name="eid" action="javascript:window.open('/escritores/'+document.forms['eid'].elements['id'].value,'_self')">
+Id Escritor: <input value="1" name="id" type="number" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+
+<p>Pesquisa por nome do escritor:
+  <form name="esearch" action="javascript:window.open('/escritores/search/'+document.forms['esearch'].elements['expr'].value,'_self')">
+    <input name="expr" id="expr" value="nome" required/>
+    <input type="submit" value="search"/>
+  </form>
+</p>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Atores</h1>
+<table>
+  <tr>
+    <th>
+      <b>Id</b>
+    </th>
+    <th>
+      <b>Nome</b>
+    </th>
+    <th>
+      <b>Data de Nascimento</b>
+    </th>
+    <th>
+      <b>dataFalecimento</b>
+    </th>
+  </tr>
+  {% for a in atores %}
+  <tr>
+    <td>
+      <a href="/atores/{{ a.idAtor }}">{{ a.idAtor }}</a>
+    </td>
+    <td>
+      {{ a.nomeA }}
+    </td>
+    <td>
+      {{ a.dataNascimento }}
+    </td>
+    <td>
+      {{ a.dataFalecimento }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

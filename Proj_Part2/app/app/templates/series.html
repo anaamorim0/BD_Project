@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ series.titulo }}</h1>
+<p>
+  <b>IdSerie: </b>{{ series.idSerie }}
+</p>
+<p>
+  <b>Título: </b>{{ series.titulo }}
+</p>
+<p>
+  <b>Título Original: </b>{{ series.tituloOriginal }}
+</p>
+<p>
+  <b>Data de lançamento: </b>{{ series.dataLancamento }}
+</p>
+<p>
+  <b>Número de temporadas: </b>{{ series.temporadas }}
+</p>
+<p>
+  <b>Número de episódios: </b>{{ series.episodios }}
+</p>
+<p>
+  <b>Classificacao: </b>{{ series.temporadas }} / 10 estrelas
+</p>
+<p>
+  <b>Número de votos: </b>{{ series.nrVotos }}
+</p>
+<p>
+  <b>Género: </b>
+<ul>
+  {% for g in generos %}
+  <li>
+    <a href="/generos/{{ g.idGenero }}">{{ g.tipo }}</a>
+  </li>
+  {% endfor %}
+</ul>
+</p>
+<p>
+  <b>Atores: </b>
+<ul>
+  {% for a in atores %}
+  <li>
+    <a href="/atores/{{ a.idAtor }}">{{ a.nomeA }}</a>
+  </li>
+  {% endfor %}
+</ul>
+</p>
+<p>
+  <b>Personagens: </b>
+<ul>
+  {% for p in personagens %}
+  <li>
+    <a href="/personagens/{{ p.idPersonagem }}">{{ p.nomeP }}</a>
+  </li>
+  {% endfor %}
+</ul>
+</p>
+<p>
+  <b>Escritores: </b>
+<ul>
+  {% for e in escritores %}
+  <li>
+    <a href="/escritores/{{ e.idEscritores }}">{{ e.nomeE }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

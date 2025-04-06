@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Procura: Serie</h1>
+<p><b>Procure a expressão:</b>"{{ search.expr }}"</p>
+<p>
+<ul>
+  {% for s in series %}
+  <li><a href="/series/{{ s.idSerie }}">{{ s.titulo }}</a></li>
+  {% endfor %}
+</ul>
+</p>
+{% endblock %}

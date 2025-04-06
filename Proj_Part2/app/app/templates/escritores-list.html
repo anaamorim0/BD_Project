@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Escritores</h1>
+<table>
+  <tr>
+    <th>
+      <b>Id</b>
+    </th>
+    <th>
+      <b>Nome</b>
+    </th>
+    <th>
+      <b>Data de Nascimento</b>
+    </th>
+    <th>
+      <b>Data de Falecimento</b>
+    </th>
+  </tr>
+  {% for e in escritores %}
+  <tr>
+    <td>
+      <a href="/escritores/{{ e.idEscritores }}">{{ e.idEscritores }}</a>
+    </td>
+    <td>
+      {{ e.nomeE }}
+    </td>
+    <td>
+      {{ e.dataNascimento }}
+    </td>
+    <td>
+      {{ e.dataFalecimento }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

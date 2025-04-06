@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{atores.nomeA}}</h1>
+<p>
+  <b>IdAtor: </b>{{ atores.idAtor }}
+</p>
+<p>
+  <b>Nome: </b>{{ atores.nomeA }}
+</p>
+<p>
+  <b>Data de Nascimento: </b>{{ atores.dataNascimento }}
+</p>
+<p>
+  <b>Data Falecimento: </b>{{ atores.dataFalecimento}}
+</p>
+<p>
+  <b>Series: </b>
+<ul>
+  {% for s in series %}
+  <li>
+    <a href="/series/{{ s.idSerie }}">{{ s.titulo }}</a>
+  </li>
+  {% endfor %}
+</ul>
+</p>
+{% endblock %}

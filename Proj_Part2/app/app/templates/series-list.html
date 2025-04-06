@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Series</h1>
+<table>
+  <tr>
+    <th>
+      <b>Id</b>
+    </th>
+    <th>
+      <b>Título</b>
+    </th>
+    <th>
+      <b>Título Original</b>
+    </th>
+    <th>
+      <b>Data de lançamento</b>
+    </th>
+    <th>
+      <b>Número de temporadas</b>
+    </th>
+    <th>
+      <b>Número de episódios</b>
+    </th>
+    <th>
+      <b>Classificação (0-10)</b>
+    </th>
+    <th>
+      <b>Número de votos</b>
+    </th>
+  </tr>
+
+  {% for series in series %}
+  <tr>
+    <td>
+      <a href="/series/{{ series.idSerie }}">{{ series.idSerie }}</a>
+    </td>
+    <td>
+      {{ series.titulo }}
+    </td>
+    <td>
+      {{ series.tituloOriginal }}
+    </td>
+    <td>
+      {{ series.dataLancamento }}
+    </td>
+    <td>
+      {{ series.temporadas }}
+    </td>
+    <td>
+      {{ series.episodios }}
+    </td>
+    <td>
+      {{ series.classificacao }}
+    </td>
+    <td>
+      {{ series.nrVotos }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

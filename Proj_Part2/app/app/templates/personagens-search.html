@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Procura: Personagem</h1>
+<p><b>Procure a expressão:</b>"{{ search.expr }}"</p>
+<p>
+<ul>
+  {% for p in personagens %}
+  <li><a href="/personagens/{{ p.idPersonagem }}">{{ p.nomeP }}</a></li>
+  {% endfor %}
+</ul>
+</p>
+{% endblock %}

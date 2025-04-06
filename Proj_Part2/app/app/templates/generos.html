@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ generos.tipo }}</h1>
+<p>
+  <b>idGenero: </b>{{ generos.idGenero }}
+</p>
+<p>
+  <b>Tipo: </b>{{ generos.tipo }}
+</p>
+<p>
+  <b>Series: </b>
+<ul>
+  {% for s in series %}
+  <li>
+    <a href="/series/{{ s.idSerie }}">{{ s.titulo }}</a>
+  </li>
+  {% endfor %}
+</ul>
+</p>
+{% endblock %}

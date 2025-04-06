@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{escritores.nomeE}}</h1>
+<p>
+  <b>IdEscritor: </b>{{ escritores.idEscritores }}
+</p>
+<p>
+  <b>Nome: </b>{{ escritores.nomeE }}
+</p>
+<p>
+  <b>Data de Nascimento: </b>{{ escritores.dataNascimento }}
+</p>
+<p>
+  <b>Data Falecimento: </b>{{ escritores.dataFalecimento}}
+</p>
+<p>
+  <b>Series: </b>
+<ul>
+  {% for s in series %}
+  <li>
+    <a href="/series/{{ s.idSerie }}">{{ s.titulo }}</a>
+  </li>
+  {% endfor %}
+</ul>
+</p>
+{% endblock %}
